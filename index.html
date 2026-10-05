@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Экзаменатор</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Библиотека для чтения .docx файлов -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🎓 AI-Экзаменатор</h1>
+        
+        <div id="setupSection" class="setup-section">
+            <div class="card">
+                <h3>Настройка билета</h3>
+                <div class="input-group">
+                    <label for="fileInput">Загрузите файл с вопросами (.json или .docx):</label>
+                    <input type="file" id="fileInput" accept=".json,.docx">
+                </div>
+                
+                <div class="row">
+                    <div class="input-group">
+                        <label for="questionsCount">Вопросов:</label>
+                        <input type="number" id="questionsCount" value="3" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="pointsPerQuestion">Баллы за ответ:</label>
+                        <input type="number" id="pointsPerQuestion" value="1" min="1">
+                    </div>
+                </div>
+                
+                <button id="startBtn" class="primary-btn">Создать билет</button>
+            </div>
+        </div>
+
+        <div id="ticketSection" class="hidden">
+            <h2 class="section-title">Ваш Билет</h2>
+            <div id="questionsContainer"></div>
+            <button id="submitBtn" class="primary-btn">Проверить через AI</button>
+        </div>
+
+        <div id="loadingSection" class="hidden text-center">
+            <div class="loader"></div>
+            <p>AI анализирует ваши ответы, пожалуйста, подождите...</p>
+        </div>
+
+        <div id="resultSection" class="hidden">
+            <h2 class="section-title">Результат проверки</h2>
+            <div id="scoreDisplay" class="score-badge"></div>
+            <div id="aiFeedbackContainer"></div>
+            <button id="restartBtn" class="secondary-btn">Новый билет</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
