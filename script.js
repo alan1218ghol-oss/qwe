@@ -2,7 +2,7 @@ let allQuestions = [];
 let currentTicket = [];
 
 // URL вашего сервера (позже заменим на реальный адрес при деплое)
-const SERVER_URL = 'http://localhost:3000';
+const SERVER_URL = 'https://qwe-z0sb.onrender.com';
 
 const fileInput = document.getElementById('fileInput');
 const questionsCountInput = document.getElementById('questionsCount');
